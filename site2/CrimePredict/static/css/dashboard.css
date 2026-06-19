@@ -1,0 +1,191 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
+}
+
+body{
+    background:#030B1D;
+    color:white;
+}
+
+.navbar{
+    border-bottom:1px solid #1F3561;
+}
+
+.navbar-brand{
+    color:#ffffff !important;
+    font-weight:700;
+    font-size:1.4rem;
+}
+
+.nav-link{
+    border:1px solid #1F3561;
+    border-radius:8px;
+    padding:8px 15px !important;
+
+    background:#101B34;
+    color:white !important;
+
+    transition:0.3s;
+}
+
+.nav-link:hover{
+   background:#3B82F6;
+   border-color:#3B82F6;
+}
+
+.offcanvas{
+    background:#081426 !important;
+}
+
+.offcanvas .nav-link{
+    color:#CBD5E1 !important;
+}
+
+.offcanvas .nav-link:hover{
+    color:#3B82F6 !important;
+}
+
+/* CONTEÚDO */
+
+.main{
+    padding:40px;
+    margin-top:70px;
+}
+
+.main h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.main p{
+    color:#94A3B8;
+    margin-bottom:30px;
+}
+
+/* PESQUISA */
+
+.search{
+    display:flex;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.search input{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#101B34;
+    color:white;
+}
+
+.search button{
+    background:#3B82F6;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.crime-card{
+    background:#101B34;
+    padding:25px;
+    border-radius:18px;
+    border:1px solid #1F3561;
+}
+
+.crime-card span{
+    color:#94A3B8;
+    font-size:14px;
+}
+
+.crime-card h2{
+    margin-top:10px;
+    font-size:32px;
+}
+
+/* CRIMES */
+
+.crimes{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.crime{
+    background:#101B34;
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+    border:1px solid #1F3561;
+    transition:.3s;
+}
+
+.crime:hover{
+    border-color:#3B82F6;
+    transform:translateY(-5px);
+}
+
+/* GRÁFICOS */
+
+.grafico{
+    background:#101B34;
+    border-radius:18px;
+    border:1px solid #1F3561;
+    margin-bottom:30px;
+    padding:20px;
+}
+
+.grafico h2{
+    margin-bottom:15px;
+}
+
+.grafico canvas{
+    width:100% !important;
+    height:350px !important;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:1200px){
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .crimes{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .crimes{
+        grid-template-columns:1fr;
+    }
+
+    .search{
+        flex-direction:column;
+    }
+
+}

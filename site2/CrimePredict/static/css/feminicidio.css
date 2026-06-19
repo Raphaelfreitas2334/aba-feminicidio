@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #030B1D;
+    color: white;
+}
+
+.navbar {
+    border-bottom: 1px solid #1F3561;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.nav-link {
+    border: 1px solid #1F3561;
+    border-radius: 8px;
+    padding: 8px 15px;
+    background: #101b34 !important;
+    color: white !important;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    background: #3B82F6;
+    border-color: #3B82F6;
+}
+
+.offcanvas {
+    background: #081426 !important;
+}
+
+.offcanvas .nav-link {
+    color: #CBD5E1 !important;
+}
+
+.offcanvas .nav-link:hover {
+    color: #3B82F6 !important;
+}
+
+/* CONTEÚDO */
+.main {
+    padding: 40px;
+    margin-top: 70px;
+}
+
+.main h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.main p {
+    color: #94A3B8;
+    margin-bottom: 30px;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.crime-card {
+    background: #101B34;
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid #1F3561;
+}
+
+.crime-card span {
+    color: #94A3B8;
+    font-size: 14px;
+}
+
+.crime-card h2 {
+    margin-top: 10px;
+    font-size: 32px;
+}
+
+/* GRÁFICOS E MAPA */
+.grafico {
+    background: #101B34;
+    border-radius: 18px;
+    border: 1px solid #1F3561;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.grafico h2 {
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+    color: #f8f9fa;
+}
+
+.grafico canvas {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+/* RESPONSIVO */
+@media(max-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 700px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    .main {
+        padding: 20px;
+    }
+}

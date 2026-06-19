@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Seu CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+    <title>CrimePredict Diadema</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark bg-primary px-3 fixed-top">
+
+        <!-- Botão Mobile -->
+        <button
+            class="btn btn-primary d-md-none"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#menuMobile">
+
+            ☰
+
+        </button>
+
+        <!-- Menu Desktop -->
+        <ul class="navbar-nav flex-row gap-3 d-none d-md-flex">
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Dashboard</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Tráfico</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Furto</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Assalto</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Predições</a>
+            </li>
+
+        </ul>
+
+        <!-- Nome do Sistema -->
+        <span class="navbar-brand ms-auto mb-0 h1">
+            CrimePredict
+        </span>
+
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <div
+        class="offcanvas offcanvas-start text-bg-dark"
+        tabindex="-1"
+        id="menuMobile">
+
+        <div class="offcanvas-header">
+
+            <h5 class="offcanvas-title">
+                CrimePredict
+            </h5>
+
+            <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas">
+            </button>
+
+        </div>
+
+        <div class="offcanvas-body">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tráfico</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Furto</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Assalto</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Feminicídio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Latrocínio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Predições</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+        <div class="main">
+
+            <h1>Predição de Crimes em Diadema</h1>
+
+            <p>Sistema de análise criminal baseado em dados históricos.</p>
+
+            <div class="search">
+                <input type="text" placeholder="Pesquisar bairro...">
+                <button>Buscar</button>
+            </div>
+
+            <div class="cards">
+
+                <div class="crime-card">
+                    <span>Total de Crimes</span>
+                    <h2>7.541</h2>
+                </div>
+
+                <div class="crime-card">
+                    <span>Bairro Mais Perigoso</span>
+                    <h2>Centro</h2>
+                </div>
+
+                <div class="crime-card">
+                    <span>Taxa Criminal</span>
+                    <h2>1.869</h2>
+                </div>
+
+                <div class="crime-card">
+                    <span>Crime Mais Comum</span>
+                    <h2>Furto</h2>
+                </div>
+
+            </div>
+
+            <div class="crimes">
+                <div class="crime">Tráfico</div>
+                <div class="crime">Furto</div>
+                <div class="crime">Assalto</div>
+                <div class="crime">Feminicídio</div>
+                <div class="crime">Latrocínio</div>
+            </div>
+
+            <div class="grafico">
+                <h2>Crimes por Categoria</h2>
+                <canvas id="graficoCategorias"></canvas>
+            </div>
+
+            <div class="grafico">
+                <h2>Horários Mais Perigosos</h2>
+                <canvas id="graficoHorarios"></canvas>
+            </div>
+
+            <div class="grafico">
+                <h2>Predição dos Próximos Meses</h2>
+                <canvas id="graficoPrevisao"></canvas>
+            </div>
+
+        </div>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Seus Scripts -->
+        <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+
+    </body>
+</html>
