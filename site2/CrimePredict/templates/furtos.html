@@ -1,0 +1,223 @@
+    {% extends 'base.html' %}
+
+    {% block title %}
+    Furtos
+    {% endblock %}
+
+    {% block css %}
+
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/furtos.css') }}">
+
+        <link rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    {% endblock %}
+
+    {% block content %}
+
+    <!-- CONTEÚDO -->
+
+    <main class="main container-fluid">
+
+        <h1>Análise de Furtos — Diadema</h1>
+
+        <p>
+            Monitoramento estatístico, geoespacial e preditivo dos registros de furtos
+            para apoio à segurança pública, identificação de áreas críticas e
+            planejamento de ações preventivas.
+        </p>
+
+        <!-- CARDS PRINCIPAIS -->
+
+        <section class="cards">
+
+            <div class="crime-card">
+                <span>Furtos Registrados (2025)</span>
+                <h2>4.382</h2>
+            </div>
+
+            <div class="crime-card">
+                <span>Média Mensal</span>
+                <h2>365</h2>
+            </div>
+
+            <div class="crime-card">
+                <span>Região Mais Afetada</span>
+                <h2>Centro</h2>
+            </div>
+
+            <div class="crime-card">
+                <span>Precisão do Modelo</span>
+                <h2>91.2%</h2>
+            </div>
+
+        </section>
+
+        <!-- CARDS SECUNDÁRIOS -->
+
+        <section class="cards">
+
+            <div class="crime-card">
+                <span>Horário Crítico</span>
+                <h2>18h - 22h</h2>
+            </div>
+
+            <div class="crime-card">
+                <span>Dia Mais Crítico</span>
+                <h2>Sexta</h2>
+            </div>
+
+            <div class="crime-card">
+                <span>Furtos de Veículos</span>
+                <h2>38%</h2>
+            </div>
+
+            <div class="crime-card">
+                <span>Taxa de Recuperação</span>
+                <h2>24%</h2>
+            </div>
+
+        </section>
+
+        <!-- GRÁFICOS -->
+
+        <section class="row">
+
+            <div class="col-12 col-xl-6 mb-4">
+                <div class="grafico">
+                    <h2>Evolução Histórica dos Furtos</h2>
+                    <canvas id="graficoEvolucao"></canvas>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-6 mb-4">
+                <div class="grafico">
+                    <h2>Tipos de Furto</h2>
+                    <canvas id="graficoTipos"></canvas>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="row">
+
+            <div class="col-12 col-xl-6 mb-4">
+                <div class="grafico">
+                    <h2>Incidência por Faixa Horária</h2>
+                    <canvas id="graficoHorario"></canvas>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-6 mb-4">
+                <div class="grafico">
+                    <h2>Furtos por Dia da Semana</h2>
+                    <canvas id="graficoSemana"></canvas>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="row">
+
+            <div class="col-12 col-xl-4 mb-4">
+                <div class="grafico">
+                    <h2>Distribuição dos Furtos</h2>
+                    <canvas id="graficoDistribuicao"></canvas>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-8 mb-4">
+                <div class="grafico">
+                    <h2>Mapa de Calor — Áreas Críticas</h2>
+                    <div id="mapaCalor"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- PREDIÇÃO -->
+
+        <section class="crime-card mb-4">
+
+            <h3 class="mb-4">
+                Predição dos Próximos 30 Dias
+            </h3>
+
+            <div class="row text-center">
+
+                <div class="col-md-4">
+                    <h2 style="color:#EF4444;">
+                        +12%
+                    </h2>
+
+                    <span>
+                        Crescimento Previsto
+                    </span>
+                </div>
+
+                <div class="col-md-4">
+                    <h2 style="color:#F59E0B;">
+                        Centro
+                    </h2>
+
+                    <span>
+                        Região de Maior Risco
+                    </span>
+                </div>
+
+                <div class="col-md-4">
+                    <h2 style="color:#22C55E;">
+                        19h
+                    </h2>
+
+                    <span>
+                        Horário Crítico Projetado
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- INSIGHTS -->
+
+        <section class="crime-card mb-5">
+
+            <h3 class="mb-4">
+                Insights Gerados pela IA
+            </h3>
+
+            <ul>
+
+                <li>Maior concentração de furtos na região central.</li>
+
+                <li>Pico de ocorrências entre 18h e 22h.</li>
+
+                <li>Veículos representam a principal categoria de furto.</li>
+
+                <li>Sextas-feiras e sábados apresentam maior incidência.</li>
+
+                <li>Corredores comerciais concentram mais ocorrências.</li>
+
+                <li>Tendência de crescimento para o próximo mês.</li>
+
+            </ul>
+
+        </section>
+
+    </main>
+
+   {% endblock %}
+
+    {% block scripts %}
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/leaflet.heat/dist/leaflet-heat.js"></script>
+
+        <script src="{{ url_for('static', filename='js/furtos.js') }}"></script>
+
+    {% endblock %}

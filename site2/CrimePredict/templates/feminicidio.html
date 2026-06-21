@@ -1,0 +1,93 @@
+    {% extends 'base.html' %}
+
+    {% block title %}
+        CrimePredict - Feminicídio em Diadema
+    {% endblock %}
+
+    {% block css %}
+
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/feminicidio.css') }}">
+
+        <link rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    {% endblock %}
+
+    {% block content %}
+
+    <main class="main container-fluid">
+        <h1>Análise de Feminicídio — Diadema</h1>
+        <p>Modelagem preditiva e análise estatística baseada em dados históricos para identificação de zonas de risco.</p>
+
+        <section class="cards">
+            <div class="crime-card">
+                <span>Casos Registrados (Ano Atual)</span>
+                <h2>12</h2>
+            </div>
+            <div class="crime-card">
+                <span>Acurácia do Modelo Preditivo</span>
+                <h2>87.4%</h2>
+            </div>
+            <div class="crime-card">
+                <span>Principal Fator de Risco</span>
+                <h2>Histórico de BO</h2>
+            </div>
+            <div class="crime-card">
+                <span>Zona de Maior Alerta</span>
+                <h2>Centro / Eldorado</h2>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-12 col-xl-6 mb-4">
+                <div class="grafico">
+                    <h2>Série Temporal (Casos e Tentativas)</h2>
+                    <canvas id="graficoSerieTemporal"></canvas>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-6 mb-4">
+                <div class="grafico">
+                    <h2>Perfil Consolidado por Faixa Etária</h2>
+                    <canvas id="graficoDemograficoIdade"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-12 col-xl-4 mb-4">
+                <div class="grafico">
+                    <h2>Relação com o Agressor</h2>
+                    <canvas id="graficoRelacaoAgressor"></canvas>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-8 mb-4">
+                <div class="grafico">
+                    <h2>Geolocalização: Zonas de Calor (Diadema)</h2>
+                    <div id="mapaCalor" style="width: 100%; height: 300px; border-radius: 12px; z-index: 1;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="crime-card mt-2 mb-5">
+            <h3 class="mb-3" style="font-size: 1.5rem;">Como funciona a nossa Predição?</h3>
+            <p class="m-0" style="color: #CBD5E1; line-height: 1.6;">
+                Nosso modelo de Ciência de Dados utiliza redes neurais e árvores de decisão analisando variáveis cruciais de Diadema: recorrência de chamados de violência doméstica por região, finais de semana/madrugadas (períodos críticos) e dados socioeconômicos para prever mapas de calor e auxiliar em patrulhas preventivas.
+            </p>
+        </section>
+    </main>
+    {% endblock %}
+
+    {% block scripts %}
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/leaflet.heat/dist/leaflet-heat.js"></script>
+
+        <script src="{{ url_for('static', filename='js/feminicidio.js') }}"></script>
+
+    {% endblock %}

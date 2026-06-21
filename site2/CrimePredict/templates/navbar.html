@@ -1,0 +1,120 @@
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-dark px-3 fixed-top">
+
+    <button
+        class="btn btn-primary d-md-none"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#menuMobile">
+
+        ☰
+
+    </button>
+
+    <ul class="navbar-nav flex-row gap-3 d-none d-md-flex">
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('index') }}">
+                Dashboard
+            </a>
+        </li>
+
+        <!-- <li class="nav-item">
+            <a class="nav-link" href="#">
+                Tráfico
+            </a>
+        </li> -->
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('furtos') }}">
+                Furto
+            </a>
+        </li>
+
+        <!-- <li class="nav-item">
+            <a class="nav-link" href="#">
+                Assalto
+            </a>
+        </li> -->
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('feminicidio') }}">
+                Feminicídio
+            </a>
+        </li>
+
+        <!-- <li class="nav-item">
+            <a class="nav-link" href="#">
+                Latrocínio
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                Predições
+            </a>
+        </li> -->
+
+    </ul>
+
+    <span class="navbar-brand ms-auto">
+        CrimePredict
+    </span>
+
+</nav>
+
+<!-- MENU MOBILE -->
+
+<div
+    class="offcanvas offcanvas-start text-bg-dark"
+    tabindex="-1"
+    id="menuMobile">
+
+    <div class="offcanvas-header">
+
+        <h5 class="offcanvas-title">
+            CrimePredict
+        </h5>
+
+        <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+    <div class="offcanvas-body">
+
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('index') }}">
+                    Dashboard
+                </a>
+            </li>
+
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">
+                    Tráfico
+                </a>
+            </li> -->
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('furtos') }}">
+                    Furto
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('feminicidio') }}">
+                    Feminicídio
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>

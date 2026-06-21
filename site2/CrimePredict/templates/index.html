@@ -1,26 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    {% extends 'base.html' %}
 
-    <!-- Seu CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    {% block title %}
+        Dashboard
+    {% endblock %}
 
-    <title>CrimePredict Diadema</title>
+    {% block css %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {% endblock %}
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
+    {% block content %}
+    <!-- <nav class="navbar navbar-dark bg-primary px-3 fixed-top">
 
-<body>
-
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-dark bg-primary px-3 fixed-top">
-
-        <!-- Botão Mobile -->
+        Botão Mobile
         <button
             class="btn btn-primary d-md-none"
             type="button"
@@ -31,11 +24,11 @@
 
         </button>
 
-        <!-- Menu Desktop -->
+        Menu Desktop
         <ul class="navbar-nav flex-row gap-3 d-none d-md-flex">
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Dashboard</a>
+                <a class="nav-link" href="{{ url_for('index') }}">Dashboard</a>
             </li>
 
             <li class="nav-item">
@@ -43,7 +36,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Furto</a>
+                <a class="nav-link" href="{{ url_for('furtos') }}">Furto</a>
             </li>
 
             <li class="nav-item">
@@ -54,16 +47,20 @@
                 <a class="nav-link" href="#">Predições</a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('feminicidio') }}">Feminicídio</a>
+            </li>
+
         </ul>
 
-        <!-- Nome do Sistema -->
+        Nome do Sistema
         <span class="navbar-brand ms-auto mb-0 h1">
             CrimePredict
         </span>
 
     </nav>
 
-    <!-- MENU MOBILE -->
+    MENU MOBILE
     <div
         class="offcanvas offcanvas-start text-bg-dark"
         tabindex="-1"
@@ -88,7 +85,7 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dashboard</a>
+                    <a class="nav-link" href="{{ url_for('index') }}">Dashboard</a>
                 </li>
 
                 <li class="nav-item">
@@ -96,7 +93,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Furto</a>
+                    <a class="nav-link" href="{{ url_for('furtos') }}">Furto</a>
                 </li>
 
                 <li class="nav-item">
@@ -104,7 +101,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Feminicídio</a>
+                    <a class="nav-link" href="{{ url_for('feminicidio') }}">Feminicídio</a>
                 </li>
 
                 <li class="nav-item">
@@ -119,7 +116,7 @@
 
         </div>
 
-    </div>
+    </div> -->
 
         <div class="main">
 
@@ -181,12 +178,8 @@
 
         </div>
 
-        <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        {% endblock %}
 
-        <!-- Seus Scripts -->
-        <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
-
-
-    </body>
-</html>
+        {% block scripts %}
+            <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+        {% endblock %}
