@@ -1,0 +1,255 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Análise de Latrocínio - Diadema
+{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/latrocinio.css') }}">
+
+<link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+{% endblock %}
+
+{% block content %}
+
+<main class="main container-fluid">
+
+    <section class="hero">
+
+        <h1>Análise de Latrocínio — Diadema</h1>
+
+        <p>
+            Monitoramento estatístico, geoespacial e preditivo dos registros
+            de latrocínio para apoio à segurança pública e identificação de
+            regiões críticas.
+        </p>
+
+    </section>
+
+    <!-- CARDS -->
+
+    <section class="cards">
+
+        <div class="crime-card">
+            <span>Casos Registrados (2025)</span>
+            <h2>18</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Taxa de Elucidação</span>
+            <h2>72%</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Região Mais Crítica</span>
+            <h2>Centro</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Horário Crítico</span>
+            <h2>19h - 23h</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Principal Alvo</span>
+            <h2>Motociclistas</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Precisão da IA</span>
+            <h2>89.4%</h2>
+        </div>
+
+    </section>
+
+    <!-- LINHA 1 -->
+
+    <section class="grid-2">
+
+        <div class="grafico">
+            <h2>Evolução Histórica dos Latrocínios</h2>
+            <canvas id="graficoHistorico"></canvas>
+        </div>
+
+        <div class="grafico">
+            <h2>Ocorrências por Bairro</h2>
+            <canvas id="graficoBairros"></canvas>
+        </div>
+
+    </section>
+
+    <!-- LINHA 2 -->
+
+    <section class="grid-2">
+
+        <div class="grafico">
+            <h2>Incidência por Faixa Horária</h2>
+            <canvas id="graficoHorarios"></canvas>
+        </div>
+
+        <div class="grafico">
+            <h2>Perfil das Vítimas</h2>
+            <canvas id="graficoVitimas"></canvas>
+        </div>
+
+    </section>
+
+    <!-- LINHA 3 -->
+
+    <section class="grid-2">
+
+        <div class="grafico">
+            <h2>Tipo de Abordagem</h2>
+            <canvas id="graficoAbordagem"></canvas>
+        </div>
+
+        <div class="grafico">
+            <h2>Comparativo Anual</h2>
+            <canvas id="graficoComparativo"></canvas>
+        </div>
+
+    </section>
+
+    <!-- MAPA -->
+
+    <section class="grafico">
+
+        <h2>Mapa de Calor — Áreas Críticas</h2>
+
+        <div id="mapaLatrocinio"></div>
+
+    </section>
+
+    <!-- PREVISÃO -->
+
+    <section class="previsao">
+
+        <div class="previsao-card">
+
+            <div>
+                <h3>+8%</h3>
+                <p>Crescimento Previsto</p>
+            </div>
+
+            <div>
+                <h3>Centro</h3>
+                <p>Região de Maior Risco</p>
+            </div>
+
+            <div>
+                <h3>21h</h3>
+                <p>Horário Crítico Projetado</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="grafico">
+
+        <h2>Previsão dos Próximos 6 Meses</h2>
+
+        <canvas id="graficoPrevisao"></canvas>
+
+    </section>
+
+    <!-- CASOS REAIS -->
+
+    <section class="grafico">
+
+        <h2>Casos Reais Registrados</h2>
+
+        <div class="casos">
+
+            <div class="caso">
+
+                <h3>Idoso morto durante assalto</h3>
+
+                <p>
+                    Homem de 74 anos foi baleado durante um roubo
+                    no bairro Taboão.
+                </p>
+
+            </div>
+
+            <div class="caso">
+
+                <h3>Crime no Canhema</h3>
+
+                <p>
+                    Suspeito foi preso após roubo seguido de morte
+                    registrado na região.
+                </p>
+
+            </div>
+
+            <div class="caso">
+
+                <h3>Caso envolvendo agente pública</h3>
+
+                <p>
+                    Investigação identificou envolvidos em latrocínio
+                    ocorrido durante deslocamento para o trabalho.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- INSIGHTS IA -->
+
+    <section class="insights">
+
+        <h2>Insights Gerados pela IA</h2>
+
+        <ul>
+
+            <li>
+                Maior concentração de latrocínios ocorre na região central.
+            </li>
+
+            <li>
+                Pico de ocorrências entre 19h e 23h.
+            </li>
+
+            <li>
+                Motociclistas representam o principal grupo de risco.
+            </li>
+
+            <li>
+                Armas de fogo aparecem em mais de 80% dos casos.
+            </li>
+
+            <li>
+                Sextas-feiras e sábados apresentam maior incidência.
+            </li>
+
+            <li>
+                Tendência de crescimento moderado para os próximos meses.
+            </li>
+
+        </ul>
+
+    </section>
+
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/leaflet.heat/dist/leaflet-heat.js"></script>
+
+<script src="{{ url_for('static', filename='js/latrocinio.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,548 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#030b1d;
+    color:white;
+    font-family:'Segoe UI',sans-serif;
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.main{
+    max-width:1400px;
+    margin:auto;
+    padding:100px 25px 40px;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#b8c4d8;
+    max-width:800px;
+    line-height:1.6;
+}
+
+/* ==========================
+   STATUS IA
+========================== */
+
+.status-ia{
+
+    background:#071a33;
+
+    border:1px solid #00ff88;
+
+    padding:12px 20px;
+
+    border-radius:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-weight:600;
+}
+
+.status-dot{
+
+    width:12px;
+
+    height:12px;
+
+    background:#00ff88;
+
+    border-radius:50%;
+
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    50%{
+        transform:scale(1.4);
+        opacity:.6;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+    margin-bottom:35px;
+}
+
+.crime-card{
+
+    background:
+    linear-gradient(
+        135deg,
+        #071a33,
+        #0d2d55,
+        #123f73
+    );
+
+    border-radius:18px;
+
+    padding:25px;
+
+    transition:.3s;
+
+    box-shadow:
+    0 0 20px rgba(0,255,255,.05);
+}
+
+.crime-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 30px rgba(0,255,255,.15);
+}
+
+.crime-card span{
+
+    color:#9fb5d1;
+
+    font-size:.95rem;
+}
+
+.crime-card h2{
+
+    margin-top:12px;
+
+    font-size:2rem;
+}
+
+/* ==========================
+   ALERTAS
+========================== */
+
+.alerta-ia{
+
+    background:
+    linear-gradient(
+        135deg,
+        #08182d,
+        #102542
+    );
+
+    border-left:
+        5px solid #00ff88;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+}
+
+.alerta-ia h2{
+    margin-bottom:20px;
+}
+
+.alerta-lista{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.alerta-item{
+
+    background:#0b203d;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+.alerta-item:hover{
+
+    background:#143865;
+}
+
+/* ==========================
+   GRID
+========================== */
+
+.grid-2{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+    margin-bottom:25px;
+}
+
+/* ==========================
+   GRÁFICOS
+========================== */
+
+.grafico{
+
+    background:
+    linear-gradient(
+        135deg,
+        #08162b,
+        #10294d
+    );
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.4);
+}
+
+.grafico h2{
+    margin-bottom:20px;
+}
+
+canvas{
+    width:100% !important;
+    max-height:400px;
+}
+
+/* ==========================
+   MAPA
+========================== */
+
+#mapaTrafico{
+
+    height:550px;
+
+    border-radius:15px;
+
+    overflow:hidden;
+}
+
+/* ==========================
+   SIMULADOR
+========================== */
+
+.simulador{
+
+    background:
+    linear-gradient(
+        135deg,
+        #082847,
+        #13406f
+    );
+
+    padding:30px;
+
+    border-radius:20px;
+
+    margin-bottom:30px;
+
+    text-align:center;
+}
+
+.simulador h2{
+    margin-bottom:10px;
+}
+
+.simulador p{
+    margin-bottom:20px;
+}
+
+.simulador select{
+
+    width:300px;
+
+    max-width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    margin-bottom:15px;
+
+    background:#051321;
+
+    color:white;
+}
+
+.simulador button{
+
+    display:block;
+
+    margin:auto;
+
+    padding:12px 30px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#00ff88;
+
+    color:black;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.simulador button:hover{
+
+    transform:scale(1.05);
+}
+
+#resultadoSimulacao{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    background:#071829;
+
+    border-radius:12px;
+
+    min-height:70px;
+}
+
+/* ==========================
+   REDE
+========================== */
+
+.descricao-rede{
+
+    margin-top:15px;
+
+    color:#b8c4d8;
+}
+
+/* ==========================
+   TIMELINE
+========================== */
+
+.timeline{
+
+    background:
+    linear-gradient(
+        135deg,
+        #07172a,
+        #12335c
+    );
+
+    border-radius:20px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+}
+
+.timeline h2{
+
+    margin-bottom:25px;
+}
+
+.timeline-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+}
+
+.evento{
+
+    flex:1;
+
+    min-width:250px;
+
+    background:#0b203d;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    position:relative;
+}
+
+.evento span{
+
+    display:inline-block;
+
+    background:#00ff88;
+
+    color:black;
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+}
+
+/* ==========================
+   INSIGHTS
+========================== */
+
+.insights{
+
+    background:
+    linear-gradient(
+        135deg,
+        #08213c,
+        #13406f
+    );
+
+    border-radius:20px;
+
+    padding:30px;
+}
+
+.insights h2{
+
+    margin-bottom:20px;
+}
+
+.insights ul{
+
+    padding-left:20px;
+}
+
+.insights li{
+
+    margin-bottom:15px;
+
+    line-height:1.7;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+
+    background:#041120 !important;
+
+    border-bottom:
+        1px solid rgba(0,255,255,.1);
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#041120;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#00c3ff;
+
+    border-radius:10px;
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media(max-width:992px){
+
+    .grid-2{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+}
+
+@media(max-width:768px){
+
+    .main{
+        padding:90px 15px 20px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    #mapaTrafico{
+        height:400px;
+    }
+
+    .timeline-container{
+        flex-direction:column;
+    }
+}

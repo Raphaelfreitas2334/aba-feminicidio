@@ -1,0 +1,316 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Análise de Tráfico - Diadema
+{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/trafico.css') }}">
+
+<link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+{% endblock %}
+
+{% block content %}
+
+<main class="main container-fluid">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Centro de Inteligência Contra o Tráfico</h1>
+
+            <p>
+                Plataforma de análise preditiva para monitoramento,
+                identificação de áreas críticas e projeção de
+                atividades relacionadas ao tráfico em Diadema.
+            </p>
+
+        </div>
+
+        <div class="status-ia">
+
+            <span class="status-dot"></span>
+
+            IA Monitorando Dados em Tempo Real
+
+        </div>
+
+    </section>
+
+    <!-- KPIS -->
+
+    <section class="cards">
+
+        <div class="crime-card">
+            <span>Pontos Monitorados</span>
+            <h2>87</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Região Mais Crítica</span>
+            <h2>Eldorado</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Apreensões em 2025</span>
+            <h2>324</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Precisão da IA</span>
+            <h2>93.8%</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Operações Previstas</span>
+            <h2>12</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Risco Atual</span>
+            <h2>Alto</h2>
+        </div>
+
+    </section>
+
+    <!-- ALERTA IA -->
+
+    <section class="alerta-ia">
+
+        <h2>⚠ Alertas Inteligentes</h2>
+
+        <div class="alerta-lista">
+
+            <div class="alerta-item">
+                Crescimento de movimentação detectado no bairro Eldorado.
+            </div>
+
+            <div class="alerta-item">
+                Aumento de ocorrências nas últimas 72 horas.
+            </div>
+
+            <div class="alerta-item">
+                Possível expansão para bairros vizinhos.
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MAPA -->
+
+    <section class="grafico">
+
+        <h2>Zonas de Influência Criminal</h2>
+
+        <div id="mapaTrafico"></div>
+
+    </section>
+
+    <!-- GRID 1 -->
+
+    <section class="grid-2">
+
+        <div class="grafico">
+
+            <h2>Evolução das Apreensões</h2>
+
+            <canvas id="graficoApreensoes"></canvas>
+
+        </div>
+
+        <div class="grafico">
+
+            <h2>Radar de Vulnerabilidade</h2>
+
+            <canvas id="graficoRadar"></canvas>
+
+        </div>
+
+    </section>
+
+    <!-- GRID 2 -->
+
+    <section class="grid-2">
+
+        <div class="grafico">
+
+            <h2>Ranking de Bairros</h2>
+
+            <canvas id="graficoRanking"></canvas>
+
+        </div>
+
+        <div class="grafico">
+
+            <h2>Distribuição por Tipo de Entorpecente</h2>
+
+            <canvas id="graficoDrogas"></canvas>
+
+        </div>
+
+    </section>
+
+    <!-- DIFERENCIAL -->
+
+    <section class="simulador">
+
+        <h2>Simulador de Operação Policial</h2>
+
+        <p>
+            Selecione um bairro para verificar o impacto
+            previsto de uma operação.
+        </p>
+
+        <select id="bairroSelect">
+
+            <option>Centro</option>
+
+            <option>Eldorado</option>
+
+            <option>Canhema</option>
+
+            <option>Taboão</option>
+
+            <option>Serraria</option>
+
+        </select>
+
+        <button id="simularBtn">
+
+            Simular Operação
+
+        </button>
+
+        <div id="resultadoSimulacao">
+
+            Nenhuma simulação executada.
+
+        </div>
+
+    </section>
+
+    <!-- REDE CRIMINOSA -->
+
+    <section class="grafico">
+
+        <h2>Rede de Influência Criminal</h2>
+
+        <canvas id="graficoRede"></canvas>
+
+        <p class="descricao-rede">
+
+            Visualização das conexões identificadas
+            pela inteligência policial.
+
+        </p>
+
+    </section>
+
+    <!-- PREVISÃO -->
+
+    <section class="grafico">
+
+        <h2>Projeção dos Próximos 12 Meses</h2>
+
+        <canvas id="graficoPrevisaoTrafico"></canvas>
+
+    </section>
+
+    <!-- TIMELINE -->
+
+    <section class="timeline">
+
+        <h2>Linha do Tempo das Operações</h2>
+
+        <div class="timeline-container">
+
+            <div class="evento">
+
+                <span>Jan</span>
+
+                <p>
+                    Operação Alpha apreende 12kg de drogas.
+                </p>
+
+            </div>
+
+            <div class="evento">
+
+                <span>Mar</span>
+
+                <p>
+                    Desmantelamento de ponto de distribuição.
+                </p>
+
+            </div>
+
+            <div class="evento">
+
+                <span>Jun</span>
+
+                <p>
+                    Redução de 18% na atividade monitorada.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- IA -->
+
+    <section class="insights">
+
+        <h2>Insights Gerados pela IA</h2>
+
+        <ul>
+
+            <li>
+                Eldorado apresenta maior probabilidade
+                de expansão territorial.
+            </li>
+
+            <li>
+                Maior movimentação observada após as 20h.
+            </li>
+
+            <li>
+                Correlação entre evasão escolar e incidência.
+            </li>
+
+            <li>
+                Crescimento previsto de 9% até o final do ano.
+            </li>
+
+            <li>
+                Região central apresenta tendência de estabilização.
+            </li>
+
+        </ul>
+
+    </section>
+
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/leaflet.heat/dist/leaflet-heat.js"></script>
+
+<script src="{{ url_for('static', filename='js/trafico.js') }}"></script>
+
+{% endblock %}

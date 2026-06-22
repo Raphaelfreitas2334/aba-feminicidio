@@ -1,5 +1,3 @@
-<!-- NAVBAR -->
-
 <nav class="navbar navbar-dark px-3 fixed-top">
 
     <button
@@ -7,9 +5,7 @@
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#menuMobile">
-
         ☰
-
     </button>
 
     <ul class="navbar-nav flex-row gap-3 d-none d-md-flex">
@@ -20,23 +16,11 @@
             </a>
         </li>
 
-        <!-- <li class="nav-item">
-            <a class="nav-link" href="#">
-                Tráfico
-            </a>
-        </li> -->
-
         <li class="nav-item">
             <a class="nav-link" href="{{ url_for('furtos') }}">
                 Furto
             </a>
         </li>
-
-        <!-- <li class="nav-item">
-            <a class="nav-link" href="#">
-                Assalto
-            </a>
-        </li> -->
 
         <li class="nav-item">
             <a class="nav-link" href="{{ url_for('feminicidio') }}">
@@ -44,23 +28,37 @@
             </a>
         </li>
 
-        <!-- <li class="nav-item">
-            <a class="nav-link" href="#">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('latrocinio') }}">
                 Latrocínio
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
-                Predições
+            <a class="nav-link" href="{{ url_for('trafico') }}">
+                Tráfico
             </a>
-        </li> -->
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('assalto') }}">
+                Assalto
+            </a>
+        </li>
 
     </ul>
 
-    <span class="navbar-brand ms-auto">
-        CrimePredict
-    </span>
+    <!-- Tudo à direita -->
+    <div class="ms-auto d-flex align-items-center gap-3">
+
+        <a class="btn btn-danger" href="#">
+            Exit
+        </a>
+
+        <span class="navbar-brand mb-0">
+            CrimePredict
+        </span>
+
+    </div>
 
 </nav>
 
@@ -94,24 +92,37 @@
                     Dashboard
                 </a>
             </li>
-
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Tráfico
-                </a>
-            </li> -->
-
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('furtos') }}">
                     Furto
                 </a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('feminicidio') }}">
                     Feminicídio
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('latrocinio') }}">
+                    Latrocínio
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('trafico') }}">
+                    Tráfico
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('assalto') }}">
+                    Assalto
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-danger" href="#">
+                    Exit
+                </a>
+            </li> 
 
         </ul>
 

@@ -1,0 +1,294 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Análise de Assaltos - Diadema
+{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/assalto.css') }}">
+
+<link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+{% endblock %}
+
+{% block content %}
+
+<main class="main container-fluid">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Central de Monitoramento de Assaltos</h1>
+
+            <p>
+                Plataforma inteligente para monitoramento,
+                análise preditiva e prevenção de assaltos
+                em Diadema.
+            </p>
+
+        </div>
+
+        <div class="status-online">
+
+            <span class="pulse"></span>
+
+            Sistema Operacional
+
+        </div>
+
+    </section>
+
+    <!-- CARDS -->
+
+    <section class="cards">
+
+        <div class="crime-card">
+            <span>Assaltos Registrados</span>
+            <h2>1.287</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Bairro Mais Afetado</span>
+            <h2>Centro</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Horário Crítico</span>
+            <h2>20h</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Rotas Monitoradas</span>
+            <h2>58</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Precisão IA</span>
+            <h2>94.1%</h2>
+        </div>
+
+        <div class="crime-card">
+            <span>Risco Atual</span>
+            <h2>Moderado</h2>
+        </div>
+
+    </section>
+
+    <!-- MEDIDOR DE RISCO -->
+
+    <section class="grafico">
+
+        <h2>Medidor de Segurança Urbana</h2>
+
+        <canvas id="graficoVelocimetro"></canvas>
+
+    </section>
+
+    <!-- ALERTAS -->
+
+    <section class="alertas">
+
+        <h2>Alertas Preventivos</h2>
+
+        <div class="alerta-lista">
+
+            <div class="alerta-item">
+                ⚠ Aumento de assaltos a motociclistas.
+            </div>
+
+            <div class="alerta-item">
+                ⚠ Região central com crescimento nas ocorrências.
+            </div>
+
+            <div class="alerta-item">
+                ⚠ Horário de risco elevado entre 19h e 23h.
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MAPA -->
+
+    <section class="grafico">
+
+        <h2>Corredores de Assalto</h2>
+
+        <div id="mapaAssalto"></div>
+
+    </section>
+
+    <!-- LINHA 1 -->
+
+    <section class="grid-2">
+
+        <div class="grafico">
+
+            <h2>Evolução Histórica</h2>
+
+            <canvas id="graficoHistorico"></canvas>
+
+        </div>
+
+        <div class="grafico">
+
+            <h2>Horários Críticos</h2>
+
+            <canvas id="graficoHorario"></canvas>
+
+        </div>
+
+    </section>
+
+    <!-- LINHA 2 -->
+
+    <section class="grid-2">
+
+        <div class="grafico">
+
+            <h2>Perfil das Vítimas</h2>
+
+            <canvas id="graficoVitimas"></canvas>
+
+        </div>
+
+        <div class="grafico">
+
+            <h2>Ranking de Bairros</h2>
+
+            <canvas id="graficoBairros"></canvas>
+
+        </div>
+
+    </section>
+
+    <!-- SIMULADOR -->
+
+    <section class="simulador">
+
+        <h2>Simulador de Rota Segura</h2>
+
+        <p>
+            Escolha origem e destino para analisar
+            o risco estimado.
+        </p>
+
+        <div class="simulador-form">
+
+            <select id="origem">
+
+                <option>Centro</option>
+                <option>Canhema</option>
+                <option>Taboão</option>
+                <option>Serraria</option>
+                <option>Eldorado</option>
+
+            </select>
+
+            <select id="destino">
+
+                <option>Centro</option>
+                <option>Canhema</option>
+                <option>Taboão</option>
+                <option>Serraria</option>
+                <option>Eldorado</option>
+
+            </select>
+
+            <button id="btnSimular">
+
+                Calcular Rota
+
+            </button>
+
+        </div>
+
+        <div id="resultadoRota">
+
+            Nenhuma rota calculada.
+
+        </div>
+
+    </section>
+
+    <!-- CALENDÁRIO -->
+
+    <section class="grafico">
+
+        <h2>Calendário Semanal de Risco</h2>
+
+        <div class="calendario-risco">
+
+            <div class="dia baixo">Dom</div>
+            <div class="dia baixo">Seg</div>
+            <div class="dia medio">Ter</div>
+            <div class="dia medio">Qua</div>
+            <div class="dia alto">Qui</div>
+            <div class="dia alto">Sex</div>
+            <div class="dia critico">Sab</div>
+
+        </div>
+
+    </section>
+
+    <!-- PREVISÃO -->
+
+    <section class="grafico">
+
+        <h2>Previsão dos Próximos Meses</h2>
+
+        <canvas id="graficoPrevisao"></canvas>
+
+    </section>
+
+    <!-- IA -->
+
+    <section class="insights">
+
+        <h2>Recomendações da IA</h2>
+
+        <ul>
+
+            <li>
+                Evite deslocamentos entre 20h e 23h.
+            </li>
+
+            <li>
+                Utilize vias mais movimentadas.
+            </li>
+
+            <li>
+                Redobre atenção próximo a corredores comerciais.
+            </li>
+
+            <li>
+                Evite utilização de celular em áreas de alto risco.
+            </li>
+
+            <li>
+                Utilize rotas alternativas nos finais de semana.
+            </li>
+
+        </ul>
+
+    </section>
+
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="{{ url_for('static', filename='js/assalto.js') }}"></script>
+
+{% endblock %}

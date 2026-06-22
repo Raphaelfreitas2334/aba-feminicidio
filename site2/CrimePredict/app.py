@@ -14,5 +14,17 @@ def feminicidio():
 def furtos():
     return render_template('furtos.html')
 
+@app.route('/latrocinio')
+def latrocinio():
+    return render_template('latrocinio.html')
+
+@app.route('/trafico')
+def trafico():
+    return render_template('trafico.html')
+
+@app.route('/assalto')
+def assalto():
+    return render_template('assalto.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
