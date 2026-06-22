@@ -1,0 +1,575 @@
+/* =====================================
+   RESET
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#030712;
+    color:white;
+    font-family:'Segoe UI',sans-serif;
+}
+
+/* =====================================
+   CONTAINER
+===================================== */
+
+.recovery-container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:100px 25px 40px;
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    margin-bottom:35px;
+}
+
+.hero h1{
+
+    font-size:2.8rem;
+
+    margin-bottom:10px;
+}
+
+.hero p{
+
+    color:#94a3b8;
+}
+
+/* =====================================
+   STATUS
+===================================== */
+
+.security-status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:
+    rgba(91,33,182,.15);
+
+    border:1px solid
+    rgba(168,85,247,.4);
+
+    padding:15px 25px;
+
+    border-radius:30px;
+
+    font-weight:600;
+}
+
+.pulse{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.4);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* =====================================
+   PROGRESSO
+===================================== */
+
+.progress-section{
+
+    margin-bottom:30px;
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:14px;
+
+    background:#111827;
+
+    border-radius:50px;
+
+    overflow:hidden;
+}
+
+#progressFill{
+
+    width:25%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #8b5cf6,
+        #06b6d4
+    );
+
+    transition:.4s;
+}
+
+#progressText{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:#94a3b8;
+}
+
+/* =====================================
+   GRID
+===================================== */
+
+.grid-recovery{
+
+    display:grid;
+
+    grid-template-columns:
+        2fr 1fr;
+
+    gap:25px;
+
+    margin-bottom:25px;
+}
+
+/* =====================================
+   CARDS
+===================================== */
+
+.recovery-card,
+.ia-card,
+.scanner-card,
+.security-panel{
+
+    background:
+    rgba(15,23,42,.85);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid
+    rgba(139,92,246,.2);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 0 30px rgba(139,92,246,.08);
+}
+
+.recovery-card h2,
+.ia-card h2,
+.scanner-card h2,
+.security-panel h2{
+
+    margin-bottom:20px;
+}
+
+/* =====================================
+   FORM
+===================================== */
+
+.form-group{
+
+    margin-bottom:20px;
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#cbd5e1;
+}
+
+.form-group input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#111827;
+
+    color:white;
+
+    font-size:1rem;
+}
+
+.form-group input:focus{
+
+    outline:2px solid #8b5cf6;
+}
+
+/* =====================================
+   BOTÕES
+===================================== */
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#btnValidar,
+#btnGerarCodigo,
+#btnRedefinir{
+
+    padding:14px 25px;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #8b5cf6,
+        #06b6d4
+    );
+
+    color:white;
+
+    font-weight:bold;
+}
+
+#btnValidar:hover,
+#btnGerarCodigo:hover,
+#btnRedefinir:hover{
+
+    transform:translateY(-3px);
+}
+
+#btnVoltar{
+
+    padding:14px 25px;
+
+    border-radius:12px;
+
+    background:#dc2626;
+
+    color:white;
+
+    font-weight:bold;
+}
+
+#btnVoltar:hover{
+
+    background:#b91c1c;
+}
+
+/* =====================================
+   IA
+===================================== */
+
+#iaAnalise{
+
+    min-height:120px;
+
+    color:#cbd5e1;
+
+    line-height:1.7;
+}
+
+/* =====================================
+   SCANNER
+===================================== */
+
+.scanner-bar{
+
+    width:100%;
+
+    height:18px;
+
+    background:#111827;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin-bottom:15px;
+}
+
+#scannerFill{
+
+    width:0;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #06b6d4,
+        #8b5cf6
+    );
+
+    transition:.3s;
+}
+
+#scannerStatus{
+
+    color:#94a3b8;
+}
+
+/* =====================================
+   CÓDIGO
+===================================== */
+
+.codigo-box{
+
+    text-align:center;
+
+    margin-bottom:20px;
+}
+
+#codigoRecuperacao{
+
+    display:inline-block;
+
+    padding:20px 40px;
+
+    border-radius:15px;
+
+    background:#111827;
+
+    font-size:1.4rem;
+
+    font-weight:bold;
+
+    color:#8b5cf6;
+
+    letter-spacing:2px;
+}
+
+/* =====================================
+   SENHA
+===================================== */
+
+.password-strength{
+
+    height:12px;
+
+    background:#111827;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin-bottom:10px;
+}
+
+#strengthBar{
+
+    width:0;
+
+    height:100%;
+
+    background:#ef4444;
+
+    transition:.3s;
+}
+
+#strengthText{
+
+    color:#94a3b8;
+}
+
+/* =====================================
+   SEGURANÇA
+===================================== */
+
+.security-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+.security-item{
+
+    background:#111827;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    text-align:center;
+}
+
+.security-item span{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:#94a3b8;
+}
+
+.security-item h3{
+
+    font-size:1.4rem;
+}
+
+.seguro{
+
+    color:#22c55e;
+}
+
+/* =====================================
+   RESUMO
+===================================== */
+
+.resumo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.resumo p{
+
+    background:#111827;
+
+    padding:15px;
+
+    border-radius:12px;
+}
+
+.resumo strong{
+
+    color:#06b6d4;
+}
+
+/* =====================================
+   AÇÕES
+===================================== */
+
+.acoes{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-top:20px;
+}
+
+/* =====================================
+   SCROLLBAR
+===================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+
+    background:#030712;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#8b5cf6;
+
+    border-radius:10px;
+}
+
+/* =====================================
+   RESPONSIVO
+===================================== */
+
+@media(max-width:992px){
+
+    .grid-recovery{
+
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:768px){
+
+    .recovery-container{
+
+        padding:90px 15px 20px;
+    }
+
+    .hero h1{
+
+        font-size:2rem;
+    }
+
+    .acoes{
+
+        flex-direction:column;
+    }
+
+    .acoes button{
+
+        width:100%;
+    }
+}

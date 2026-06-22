@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação de Senha</title>
+
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/esqueci_senha.css') }}">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<main class="recovery-container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div>
+
+            <h1>Central de Recuperação de Credenciais</h1>
+
+            <p>
+                Sistema seguro para redefinição de acesso ao CrimePredict.
+            </p>
+
+        </div>
+
+        <div class="security-status">
+
+            <span class="pulse"></span>
+
+            Ambiente Seguro
+
+        </div>
+
+    </section>
+
+    <!-- PROGRESSO -->
+
+    <section class="progress-section">
+
+        <div class="progress-bar">
+
+            <div id="progressFill"></div>
+
+        </div>
+
+        <span id="progressText">
+
+            Etapa 1 de 4 - Identificação
+
+        </span>
+
+    </section>
+
+    <!-- GRID -->
+
+    <section class="grid-recovery">
+
+        <!-- FORMULÁRIO -->
+
+        <div class="recovery-card">
+
+            <h2>
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                Identificação
+
+            </h2>
+
+            <div class="form-group">
+
+                <label>Usuário</label>
+
+                <input
+                    type="text"
+                    id="usuario"
+                    placeholder="Digite seu usuário">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>E-mail</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu e-mail">
+
+            </div>
+
+            <button id="btnValidar">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                Validar Identidade
+
+            </button>
+
+        </div>
+
+        <!-- IA -->
+
+        <div class="ia-card">
+
+            <h2>
+
+                🤖 Assistente IA
+
+            </h2>
+
+            <div id="iaAnalise">
+
+                Aguardando dados para análise...
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SCANNER -->
+
+    <section class="scanner-card">
+
+        <h2>
+
+            Scanner de Identidade
+
+        </h2>
+
+        <div class="scanner-bar">
+
+            <div id="scannerFill"></div>
+
+        </div>
+
+        <p id="scannerStatus">
+
+            Nenhuma verificação iniciada.
+
+        </p>
+
+    </section>
+
+    <!-- CÓDIGO -->
+
+    <section class="recovery-card">
+
+        <h2>
+
+            Código de Recuperação
+
+        </h2>
+
+        <div class="codigo-box">
+
+            <span id="codigoRecuperacao">
+
+                CP-REC-00000
+
+            </span>
+
+        </div>
+
+        <button id="btnGerarCodigo">
+
+            <i class="fa-solid fa-key"></i>
+
+            Gerar Código
+
+        </button>
+
+    </section>
+
+    <!-- NOVA SENHA -->
+
+    <section class="recovery-card">
+
+        <h2>
+
+            Nova Credencial
+
+        </h2>
+
+        <div class="form-group">
+
+            <label>Nova Senha</label>
+
+            <input
+                type="password"
+                id="novaSenha"
+                placeholder="Digite a nova senha">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Confirmar Senha</label>
+
+            <input
+                type="password"
+                id="confirmarSenha"
+                placeholder="Confirme a senha">
+
+        </div>
+
+        <div class="password-strength">
+
+            <div id="strengthBar"></div>
+
+        </div>
+
+        <span id="strengthText">
+
+            Aguardando senha...
+
+        </span>
+
+    </section>
+
+    <!-- SEGURANÇA -->
+
+    <section class="security-panel">
+
+        <h2>
+
+            Centro de Segurança
+
+        </h2>
+
+        <div class="security-grid">
+
+            <div class="security-item">
+
+                <span>Tentativas</span>
+
+                <h3 id="tentativas">
+
+                    0
+
+                </h3>
+
+            </div>
+
+            <div class="security-item">
+
+                <span>Último Login</span>
+
+                <h3>
+
+                    18/06/2026
+
+                </h3>
+
+            </div>
+
+            <div class="security-item">
+
+                <span>Status</span>
+
+                <h3 class="seguro">
+
+                    Seguro
+
+                </h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RESUMO -->
+
+    <section class="recovery-card">
+
+        <h2>
+
+            Resumo da Recuperação
+
+        </h2>
+
+        <div class="resumo">
+
+            <p>
+
+                <strong>Usuário:</strong>
+
+                <span id="resumoUsuario">
+
+                    -
+                </span>
+
+            </p>
+
+            <p>
+
+                <strong>E-mail:</strong>
+
+                <span id="resumoEmail">
+
+                    -
+                </span>
+
+            </p>
+
+            <p>
+
+                <strong>Código:</strong>
+
+                <span id="resumoCodigo">
+
+                    -
+                </span>
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- AÇÕES -->
+
+    <section class="acoes">
+
+        <button id="btnVoltar">
+
+            <i class="fa-solid fa-arrow-left"></i>
+            <a style="text-decoration: none"
+            href="{{ url_for('login') }}">
+                Voltar para Login
+            </a>    
+        </button>
+
+        <button id="btnRedefinir">
+
+            <i class="fa-solid fa-lock"></i>
+
+            Redefinir Senha
+
+        </button>
+
+    </section>
+
+</main>
+
+</body>
+
+<script src="{{ url_for('static', filename='js/esqueci_senha.js') }}"></script>
+</html>

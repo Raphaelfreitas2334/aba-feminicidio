@@ -30,6 +30,13 @@ def trafico():
 def assalto():
     return render_template('assalto.html')
 
+@app.route('/Cadastro_usuario')
+def cadastro_usuario():
+    return render_template('cadastro_usuario.html')
+
+@app.route('/Esqueci_senha')
+def esqueci_senha():
+    return render_template('esqueci_senha.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

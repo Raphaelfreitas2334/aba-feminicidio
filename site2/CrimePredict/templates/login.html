@@ -219,21 +219,29 @@
 
                     <strong>
 
-                        Credenciais de Demonstração
+                        Ainda não tem cadastro? Use as credenciais abaixo para acessar o sistema:
 
                     </strong>
-
-                    <p>
-
-                        Usuário: admin
-
-                    </p>
-
-                    <p>
-
-                        Senha: 123456
-
-                    </p>
+                    <br>
+                    <br>
+                    <button
+                        id="btnCadastro" 
+                        >
+                        <a style="text-decoration: none"
+                           href="{{ url_for('cadastro_usuario') }}">
+                            Criar Conta
+                        </a>
+                    </button>
+                    <br>
+                    <br>    
+                    <button
+                        id="btnEsqueciSenha" 
+                        >
+                        <a style="text-decoration: none"
+                           href="{{ url_for('esqueci_senha') }}">
+                            Esqueci a Senha
+                        </a>
+                    </button>
 
                 </div>
 

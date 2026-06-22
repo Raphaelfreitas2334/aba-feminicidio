@@ -1,0 +1,602 @@
+/* =====================================
+   RESET
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#020617;
+    color:white;
+    font-family:'Segoe UI',sans-serif;
+}
+
+/* =====================================
+   CONTAINER
+===================================== */
+
+.cadastro-container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:100px 25px 40px;
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    margin-bottom:35px;
+}
+
+.hero h1{
+
+    font-size:2.8rem;
+
+    margin-bottom:10px;
+}
+
+.hero p{
+
+    color:#94a3b8;
+}
+
+.user-id{
+
+    background:
+    rgba(15,23,42,.8);
+
+    border:1px solid
+    rgba(0,229,255,.15);
+
+    border-radius:18px;
+
+    padding:20px 30px;
+
+    text-align:center;
+}
+
+.user-id span{
+
+    display:block;
+
+    color:#94a3b8;
+
+    margin-bottom:5px;
+}
+
+.user-id h2{
+
+    color:#00e5ff;
+}
+
+/* =====================================
+   PROGRESSO
+===================================== */
+
+.progress-section{
+
+    margin-bottom:30px;
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:14px;
+
+    background:#0f172a;
+
+    border-radius:50px;
+
+    overflow:hidden;
+}
+
+#progressFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #00e5ff,
+        #00ff88
+    );
+
+    transition:.4s;
+}
+
+#progressText{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:#94a3b8;
+}
+
+/* =====================================
+   GRID
+===================================== */
+
+.grid-cadastro{
+
+    display:grid;
+
+    grid-template-columns:
+        2fr 1fr;
+
+    gap:25px;
+
+    margin-bottom:25px;
+}
+
+.grid-2{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:20px;
+}
+
+/* =====================================
+   CARDS
+===================================== */
+
+.cadastro-card,
+.avatar-card,
+.ia-card{
+
+    background:
+    rgba(15,23,42,.8);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid
+    rgba(0,229,255,.1);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 0 25px rgba(0,229,255,.05);
+}
+
+.cadastro-card h2,
+.ia-card h2{
+
+    margin-bottom:20px;
+}
+
+/* =====================================
+   FORMULÁRIO
+===================================== */
+
+.form-group{
+
+    margin-bottom:20px;
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#cbd5e1;
+}
+
+.form-group input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#0f172a;
+
+    color:white;
+
+    font-size:1rem;
+}
+
+.form-group input:focus{
+
+    outline:2px solid #00e5ff;
+}
+
+/* =====================================
+   AVATAR
+===================================== */
+
+.avatar-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+}
+
+#avatarPreview{
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:3rem;
+
+    font-weight:bold;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00e5ff,
+        #00ff88
+    );
+
+    color:#020617;
+
+    margin-bottom:20px;
+}
+
+#avatarNome{
+
+    margin-bottom:10px;
+}
+
+/* =====================================
+   SENHA
+===================================== */
+
+.password-strength{
+
+    height:12px;
+
+    background:#0f172a;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin-bottom:10px;
+}
+
+#strengthBar{
+
+    width:0%;
+
+    height:100%;
+
+    background:#ef4444;
+
+    transition:.4s;
+}
+
+#strengthText{
+
+    color:#94a3b8;
+}
+
+/* =====================================
+   PERFIS
+===================================== */
+
+.perfil-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+}
+
+.perfil-card{
+
+    padding:25px;
+
+    border-radius:18px;
+
+    background:#0f172a;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    border:2px solid transparent;
+}
+
+.perfil-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#00e5ff;
+}
+
+.perfil-card i{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+    color:#00e5ff;
+}
+
+.perfil-card.ativo{
+
+    border-color:#00ff88;
+
+    background:#082f2f;
+}
+
+/* =====================================
+   REGIÕES
+===================================== */
+
+.regioes{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+}
+
+.regiao{
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#0f172a;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.regiao:hover{
+
+    background:#00e5ff;
+
+    color:#020617;
+}
+
+.regiao.ativa{
+
+    background:#00ff88;
+
+    color:#020617;
+}
+
+/* =====================================
+   IA
+===================================== */
+
+#iaAnalise{
+
+    min-height:80px;
+
+    color:#cbd5e1;
+
+    line-height:1.7;
+}
+
+/* =====================================
+   RESUMO
+===================================== */
+
+.resumo-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.resumo-grid div{
+
+    background:#0f172a;
+
+    padding:15px;
+
+    border-radius:12px;
+}
+
+.resumo-grid strong{
+
+    display:block;
+
+    margin-bottom:5px;
+
+    color:#00e5ff;
+}
+
+/* =====================================
+   BOTÃO
+===================================== */
+
+.acoes{
+
+    text-align:center;
+
+    margin-top:20px;
+}
+
+#btnVoltar{
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00e5ff,
+        #00ff88
+    );
+
+    color:#020617;
+
+    transition:.3s;
+}
+
+#btnVoltar:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 25px rgba(0,255,136,.4);
+}
+
+#btnCadastrar{
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00e5ff,
+        #00ff88
+    );
+
+    color:#020617;
+
+    transition:.3s;
+}
+
+#btnCadastrar:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 25px rgba(0,255,136,.4);
+}
+
+/* =====================================
+   SCROLLBAR
+===================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+
+    background:#020617;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#00e5ff;
+
+    border-radius:10px;
+}
+
+/* =====================================
+   RESPONSIVO
+===================================== */
+
+@media(max-width:992px){
+
+    .grid-cadastro{
+
+        grid-template-columns:1fr;
+    }
+
+    .grid-2{
+
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:768px){
+
+    .cadastro-container{
+
+        padding:90px 15px 20px;
+    }
+
+    .hero h1{
+
+        font-size:2rem;
+    }
+
+    .perfil-grid{
+
+        grid-template-columns:1fr;
+    }
+}

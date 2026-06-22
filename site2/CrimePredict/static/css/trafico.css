@@ -478,11 +478,41 @@ canvas{
 ========================== */
 
 .navbar{
+    border-bottom:1px solid #1F3561;
+}
 
-    background:#041120 !important;
+.navbar-brand{
+    color:#ffffff !important;
+    font-weight:700;
+    font-size:1.4rem;
+}
 
-    border-bottom:
-        1px solid rgba(0,255,255,.1);
+.nav-link{
+    border:1px solid #1F3561;
+    border-radius:8px;
+    padding:8px 15px !important;
+
+    background:#101B34;
+    color:white !important;
+
+    transition:0.3s;
+}
+
+.nav-link:hover{
+   background:#3B82F6;
+   border-color:#3B82F6;
+}
+
+.offcanvas{
+    background:#081426 !important;
+}
+
+.offcanvas .nav-link{
+    color:#CBD5E1 !important;
+}
+
+.offcanvas .nav-link:hover{
+    color:#3B82F6 !important;
 }
 
 /* ==========================
