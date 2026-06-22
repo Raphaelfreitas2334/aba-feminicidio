@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CrimePredict - Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/login.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- TELA DE BOOT -->
+
+    <div id="bootScreen">
+
+        <div class="boot-content">
+
+            <h1>CrimePredict Intelligence System</h1>
+
+            <div class="boot-messages">
+
+                <p>Inicializando módulos...</p>
+
+                <p>Conectando IA preditiva...</p>
+
+                <p>Carregando banco de dados...</p>
+
+                <p>Sincronizando ocorrências...</p>
+
+                <p class="success">
+                    Sistema pronto.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PARTÍCULAS -->
+
+    <div id="particles"></div>
+
+    <!-- GRID DE FUNDO -->
+
+    <div class="grid-background"></div>
+
+    <!-- STATUS -->
+
+    <div class="system-status">
+
+        <div class="status-card">
+
+            <h3>Monitoramento</h3>
+
+            <span id="crimeCounter">
+                7.541
+            </span>
+
+            <small>Ocorrências Monitoradas</small>
+
+        </div>
+
+        <div class="status-card">
+
+            <h3>Precisão IA</h3>
+
+            <span>
+                94.7%
+            </span>
+
+            <small>Modelo Preditivo</small>
+
+        </div>
+
+        <div class="status-card">
+
+            <h3>Status</h3>
+
+            <span class="online">
+                ONLINE
+            </span>
+
+            <small>Sistema Operacional</small>
+
+        </div>
+
+    </div>
+
+    <!-- IA -->
+
+    <div class="ia-console">
+
+        <h4>Assistente IA</h4>
+
+        <p id="iaMessage">
+
+            Aguardando autenticação...
+
+        </p>
+
+    </div>
+
+    <!-- LOGIN -->
+
+    <div class="login-container">
+
+        <div class="login-card">
+
+            <div class="card-header">
+
+                <div class="logo">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <h1>CrimePredict</h1>
+
+                <p>
+
+                    Sistema Inteligente de Predição Criminal
+
+                </p>
+
+            </div>
+
+            <form id="loginForm">
+
+                <div class="input-group">
+
+                    <label>
+
+                        Usuário
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="usuario"
+                        placeholder="Digite seu usuário">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>
+
+                        Senha
+
+                    </label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            id="senha"
+                            placeholder="Digite sua senha">
+
+                        <button
+                            type="button"
+                            id="togglePassword">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- NÍVEL -->
+
+                <div class="input-group">
+
+                    <label>
+
+                        Nível de Acesso
+
+                    </label>
+
+                    <select id="nivel">
+
+                        <option>
+                            Analista
+                        </option>
+
+                        <option>
+                            Investigador
+                        </option>
+
+                        <option>
+                            Administrador
+                        </option>
+
+                        <option>
+                            Professor
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- LOGIN PADRÃO -->
+
+                <div class="credenciais">
+
+                    <strong>
+
+                        Credenciais de Demonstração
+
+                    </strong>
+
+                    <p>
+
+                        Usuário: admin
+
+                    </p>
+
+                    <p>
+
+                        Senha: 123456
+
+                    </p>
+
+                </div>
+
+                <!-- BOTÃO -->
+
+                <button
+                    type="submit"
+                    id="btnLogin">
+
+                    <span>
+
+                        Entrar no Sistema
+
+                    </span>
+
+                </button>
+
+            </form>
+
+            <!-- BARRA DE ACESSO -->
+
+            <div class="auth-progress">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+            <!-- RESULTADO -->
+
+            <div id="authStatus">
+
+                Aguardando autenticação...
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <div>
+
+            CrimePredict Intelligence Center
+
+        </div>
+
+        <div>
+
+            Diadema • São Paulo
+
+        </div>
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
+</body>
+
+</html>

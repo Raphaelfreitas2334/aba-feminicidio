@@ -1,0 +1,567 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    font-family:'Segoe UI',sans-serif;
+    background:#020617;
+    color:white;
+    position:relative;
+}
+
+/* ==========================================
+   GRID DE FUNDO
+========================================== */
+
+.grid-background{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    linear-gradient(
+        rgba(0,255,255,.05) 1px,
+        transparent 1px
+    ),
+    linear-gradient(
+        90deg,
+        rgba(0,255,255,.05) 1px,
+        transparent 1px
+    );
+
+    background-size:40px 40px;
+
+    z-index:0;
+}
+
+/* ==========================================
+   PARTÍCULAS
+========================================== */
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:1;
+
+    pointer-events:none;
+}
+
+/* ==========================================
+   BOOT SCREEN
+========================================== */
+
+#bootScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    transition:1s;
+}
+
+.boot-content{
+
+    text-align:center;
+}
+
+.boot-content h1{
+
+    color:#00e5ff;
+
+    margin-bottom:30px;
+
+    font-size:2.5rem;
+}
+
+.boot-messages p{
+
+    margin:8px 0;
+
+    color:#cbd5e1;
+}
+
+.success{
+
+    color:#00ff88 !important;
+}
+
+/* ==========================================
+   STATUS LATERAL
+========================================== */
+
+.system-status{
+
+    position:fixed;
+
+    top:30px;
+
+    left:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    z-index:2;
+}
+
+.status-card{
+
+    width:220px;
+
+    background:
+    rgba(15,23,42,.8);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid
+    rgba(0,255,255,.15);
+
+    border-radius:15px;
+
+    padding:15px;
+}
+
+.status-card h3{
+
+    color:#94a3b8;
+
+    font-size:.9rem;
+
+    margin-bottom:10px;
+}
+
+.status-card span{
+
+    font-size:1.8rem;
+
+    font-weight:bold;
+
+    display:block;
+}
+
+.online{
+
+    color:#00ff88;
+}
+
+/* ==========================================
+   IA CONSOLE
+========================================== */
+
+.ia-console{
+
+    position:fixed;
+
+    right:30px;
+
+    top:30px;
+
+    width:320px;
+
+    background:
+    rgba(15,23,42,.8);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid
+    rgba(0,255,255,.15);
+
+    border-radius:15px;
+
+    padding:20px;
+
+    z-index:2;
+}
+
+.ia-console h4{
+
+    color:#00e5ff;
+
+    margin-bottom:15px;
+}
+
+.ia-console p{
+
+    color:#dbeafe;
+
+    line-height:1.6;
+}
+
+/* ==========================================
+   LOGIN
+========================================== */
+
+.login-container{
+
+    position:relative;
+
+    z-index:3;
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.login-card{
+
+    width:500px;
+
+    max-width:95%;
+
+    background:
+    rgba(15,23,42,.75);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid
+    rgba(0,255,255,.15);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:
+    0 0 50px rgba(0,255,255,.1);
+
+    transition:
+    transform .2s ease;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.card-header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+.logo{
+
+    width:80px;
+
+    height:80px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00e5ff,
+        #00ff88
+    );
+
+    margin-bottom:20px;
+}
+
+.logo i{
+
+    color:#020617;
+
+    font-size:2rem;
+}
+
+.card-header h1{
+
+    margin-bottom:10px;
+}
+
+.card-header p{
+
+    color:#94a3b8;
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.input-group{
+
+    margin-bottom:20px;
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#cbd5e1;
+}
+
+.input-group input,
+.input-group select{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#0f172a;
+
+    color:white;
+
+    font-size:1rem;
+}
+
+.input-group input:focus,
+.input-group select:focus{
+
+    outline:2px solid #00e5ff;
+}
+
+/* ==========================================
+   SENHA
+========================================== */
+
+.password-box{
+
+    display:flex;
+}
+
+.password-box input{
+
+    border-radius:
+    12px 0 0 12px;
+}
+
+.password-box button{
+
+    width:60px;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:#00e5ff;
+
+    color:#020617;
+
+    font-size:1.1rem;
+
+    border-radius:
+    0 12px 12px 0;
+}
+
+/* ==========================================
+   DEMONSTRAÇÃO
+========================================== */
+
+.credenciais{
+
+    background:#08111f;
+
+    border:1px solid
+    rgba(0,255,255,.1);
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+}
+
+.credenciais strong{
+
+    color:#00e5ff;
+}
+
+.credenciais p{
+
+    margin-top:5px;
+
+    color:#cbd5e1;
+}
+
+/* ==========================================
+   BOTÃO
+========================================== */
+
+#btnLogin{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    font-size:1rem;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00e5ff,
+        #00ff88
+    );
+
+    color:#020617;
+
+    transition:.3s;
+}
+
+#btnLogin:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 0 25px rgba(0,255,255,.4);
+}
+
+/* ==========================================
+   BARRA DE PROGRESSO
+========================================== */
+
+.auth-progress{
+
+    height:8px;
+
+    margin-top:20px;
+
+    background:#0f172a;
+
+    border-radius:50px;
+
+    overflow:hidden;
+}
+
+#progressBar{
+
+    width:0;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #00e5ff,
+        #00ff88
+    );
+
+    transition:.3s;
+}
+
+/* ==========================================
+   STATUS
+========================================== */
+
+#authStatus{
+
+    text-align:center;
+
+    margin-top:15px;
+
+    color:#94a3b8;
+}
+
+/* ==========================================
+   RODAPÉ
+========================================== */
+
+footer{
+
+    position:fixed;
+
+    bottom:15px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    color:#64748b;
+
+    font-size:.9rem;
+
+    z-index:2;
+}
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media(max-width:1200px){
+
+    .system-status{
+
+        display:none;
+    }
+
+    .ia-console{
+
+        display:none;
+    }
+}
+
+@media(max-width:768px){
+
+    .login-card{
+
+        padding:25px;
+    }
+
+    .card-header h1{
+
+        font-size:1.8rem;
+    }
+
+    footer{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:5px;
+    }
+}
