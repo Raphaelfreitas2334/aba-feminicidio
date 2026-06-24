@@ -1,22 +1,18 @@
+
     {% extends 'base.html' %}
 
     {% block title %}
-        CrimePredict - Feminicídio em Diadema
+        Dashboard
     {% endblock %}
 
     {% block css %}
-
-        <link rel="stylesheet"
-            href="{{ url_for('static', filename='css/feminicidio.css') }}">
-
-        <link rel="stylesheet"
-            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     {% endblock %}
 
     {% block content %}
-
-    <main class="main container-fluid">
+    
+         <main class="main container-fluid">
         <h1>Análise de Feminicídio — Diadema</h1>
         <p>Modelagem preditiva e análise estatística baseada em dados históricos para identificação de zonas de risco.</p>
 
@@ -56,6 +52,22 @@
         </section>
 
         <section class="row">
+            <div class="col-12 col-xl-6 mb-4">
+                <div class="grafico">
+                    <h2>Tendência e Predição (Próximos Meses)</h2>
+                    <canvas id="graficoPredicao"></canvas>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-6 mb-4">
+                <div class="grafico">
+                    <h2>Atendimentos por Delegacia / Distrito</h2>
+                    <canvas id="graficoDelegacias"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
             <div class="col-12 col-xl-4 mb-4">
                 <div class="grafico">
                     <h2>Relação com o Agressor</h2>
@@ -77,17 +89,9 @@
                 Nosso modelo de Ciência de Dados utiliza redes neurais e árvores de decisão analisando variáveis cruciais de Diadema: recorrência de chamados de violência doméstica por região, finais de semana/madrugadas (períodos críticos) e dados socioeconômicos para prever mapas de calor e auxiliar em patrulhas preventivas.
             </p>
         </section>
-    </main>
-    {% endblock %}
 
-    {% block scripts %}
+        {% endblock %}
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-        <script src="https://cdn.jsdelivr.net/npm/leaflet.heat/dist/leaflet-heat.js"></script>
-
-        <script src="{{ url_for('static', filename='js/feminicidio.js') }}"></script>
-
-    {% endblock %}
+        {% block scripts %}
+            <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+        {% endblock %}

@@ -11,112 +11,6 @@
     {% endblock %}
 
     {% block content %}
-    <!-- <nav class="navbar navbar-dark bg-primary px-3 fixed-top">
-
-        Botão Mobile
-        <button
-            class="btn btn-primary d-md-none"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#menuMobile">
-
-            ☰
-
-        </button>
-
-        Menu Desktop
-        <ul class="navbar-nav flex-row gap-3 d-none d-md-flex">
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('index') }}">Dashboard</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">Tráfico</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('furtos') }}">Furto</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">Assalto</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">Predições</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('feminicidio') }}">Feminicídio</a>
-            </li>
-
-        </ul>
-
-        Nome do Sistema
-        <span class="navbar-brand ms-auto mb-0 h1">
-            CrimePredict
-        </span>
-
-    </nav>
-
-    MENU MOBILE
-    <div
-        class="offcanvas offcanvas-start text-bg-dark"
-        tabindex="-1"
-        id="menuMobile">
-
-        <div class="offcanvas-header">
-
-            <h5 class="offcanvas-title">
-                CrimePredict
-            </h5>
-
-            <button
-                type="button"
-                class="btn-close btn-close-white"
-                data-bs-dismiss="offcanvas">
-            </button>
-
-        </div>
-
-        <div class="offcanvas-body">
-
-            <ul class="navbar-nav">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('index') }}">Dashboard</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Tráfico</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('furtos') }}">Furto</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Assalto</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('feminicidio') }}">Feminicídio</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Latrocínio</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Predições</a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div> -->
 
         <div class="main">
 
@@ -176,10 +70,14 @@
                 <canvas id="graficoPrevisao"></canvas>
             </div>
 
-        </div>
+        </div>        
 
-        {% endblock %}
+       {% endblock %}
 
         {% block scripts %}
-            <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+            <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Seus Scripts -->
+        <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
         {% endblock %}
